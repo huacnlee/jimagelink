@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="title" content=""/>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>jQuery jImageLink Plugin Example</title>
+<script type="text/css"></script>
+<style type="text/css">			
+	* {margin:0; padding:0;}
+	body{background:#171B20; font-size:12px; text-align:center; font-family: Geneva, Arial, Helvetica, sans-serif; color:#FFF;  }
+	#wrap {margin:20px;text-align:left;}
+	#main {padding:20px 0;}
+	a.linkIcon {
+		display: block;
+		background: url(images/lightbox.gif) no-repeat;
+		width: 14px;
+		height: 14px;
+	}
+	
+	#menu {
+		margin:10px 0;
+	}
+	
+	#menu li { display:inline; margin:2px 0;}
+	#menu li a:link,	#menu li a:visited { background:#444444; color:#FFF; text-align:left; width:300px; margin:5px; text-decoration:none; padding:5px; display:block;  }
+	#menu li a:hover { color:#333; background:#A9D06A;}
+	
+	h1 {font-size:32px; text-align:center;margin-bottom:18px;}
+	h1 span.version {font-size:12px; color:#96BF55; font-weight:normal; margin-left:10px;}
+	h2{font-size:20px; padding:12px 0;}
+	h2 a {font-size:12px; color:#96BF55; font-weight:normal; margin-left:10px;}
+	h4 { font-size:16px; padding:8px 0;  }
+	a {padding:3px; color:#0099FF;}
+	
+	.content {padding:20px; margin:10px;  background:#000000;}
+	img {border:none;}
+	
+	#demo h4 { color:#0099FF;}
+	
+	#features {padding:20px;}
+	#features {margin-bottom:20px;}
+	#features .content {padding:20px;}
+	
+
+	#document div {margin:8px; word-break:break-all; word-wrap:break-word;}
+	#document h4 {color:#96BF55;}
+	#document div pre { font-family:  Arial, Helvetica, sans-serif; padding:20px; background:#000000;}
+	
+	#downloads .content a { padding:5px; font-size:11px; color:#FFF;background:#FF0000; margin-right:15px; font-weight:bold; text-decoration:none; }
+	
+	#about {margin-top:20px;}
+</style>
+<link type="text/css" href="styles/shadowbox.css" rel="stylesheet" media="screen" />
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.jImageLink-pack.js"></script>
+<script type="text/javascript" src="scripts/jquery.shadowbox.js"></script>
+<script type="text/javascript" src="scripts/shadowbox.js"></script>
+<script type="text/javascript">
+	$("body").ready(function(){
+		$("a.imgLink").jImageLink({
+			iconClassName : "linkIcon",
+			iconRel : "shadowbox",
+			iconWidth : 14,
+			iconHeight : 14
+		});		
+		
+		/* 初始化 shadowbox */
+		Shadowbox.init({
+	        resizeLgImages:     true,
+	        displayNav:         false,
+	        handleUnsupported:  'remove',
+	        keysClose:          ['c', 27] // c or esc
+	    });
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1>jQuery jImageLink Plugin<span class="version">Version 0.1</span></h1>
+			<ul id="menu">
+				<li><a href="#features">Features</a></li>
+				<li><a href="#demo">Demo</a></li>
+				<li><a href="#document">How to use?</a></li>
+				<li><a href="#downloads">Downloads</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div id="features">
+				<h2>Features<a href="#header">Top</a></h2>
+				<div class="content">
+					此插件是模拟<a href="http://www.yupoo.com">Yupoo</a>的缩略图的功能，当鼠标经过图片时，显示出一个小图标，点击可以看大图，再结合类似<a href="http://www.stickmanlabs.com/lightwindow">Lightwindow</a>这种类似的插件实现图片显示效果。<br />
+					本页的演示效果使用了<a href="http://mjijackson.com/shadowbox/">Shadowbox</a>
+				</div>
+			</div>
+			<div id="demo">
+				<h2>Demo<a href="#header">Top</a></h2>
+				<div class="used">
+					<div class="content">
+						<a href="http://huacn.cnblogs.com" class="imgLink"><img src="http://pic.yupoo.com/huacn/692724e71538/square.jpg" alt="http://pic.yupoo.com/huacn/692724e71538/n9zfxemv.jpg"  title="Photo - 1" /></a>&nbsp;&nbsp;&nbsp;
+						<a href="http://huacn.cnblogs.com" class="imgLink"><img src="http://pic.yupoo.com/huacn/576724e71538/square.jpg" alt="http://pic.yupoo.com/huacn/576724e71538/wyptx5oh.jpg"  title="Photo - 2" /></a>&nbsp;&nbsp;&nbsp;					
+						<a href="http://huacn.cnblogs.com" class="imgLink"><img src="http://pic.yupoo.com/huacn/491934e71538/square.jpg" alt="http://pic.yupoo.com/huacn/491934e71538/0as26vyc.jpg"  title="Photo - 3" /></a>
+					</div>
+				</div>
+			</div>
+			<div id="document">
+				<h2>How to use it?<a href="#header">Top</a></h2>
+				<div  class="html">
+				<h4>HTML:</h4>
+				<pre>
+&lt;a href="http://huacn.cnblogs.com" class="imgLink"&gt;
+&lt;img src="http://pic.yupoo.com/huacn/692724e71538/square.jpg" alt="http://pic.yupoo.com/huacn/692724e71538/n9zfxemv.jpg"  title="Photo - 1" /&gt;
+&lt;/a&gt;
+&lt;a href="http://huacn.cnblogs.com" class="imgLink"&gt;
+&lt;img src="http://pic.yupoo.com/huacn/576724e71538/square.jpg" alt="http://pic.yupoo.com/huacn/576724e71538/wyptx5oh.jpg"  title="Photo - 2" /&gt;
+&lt;/a&gt;								
+&lt;a href="http://huacn.cnblogs.com" class="imgLink"&gt;
+&lt;img src="http://pic.yupoo.com/huacn/491934e71538/square.jpg" alt="http://pic.yupoo.com/huacn/491934e71538/0as26vyc.jpg"  title="Photo - 3" /&gt;
+&lt;/a&gt;
+				</pre>		
+				</div>
+				<div class="js">
+				<h4>JS:</h4>
+				<pre>						
+$("body").ready(function(){
+
+	/*
+		there is the jImageLink code
+	 */
+	$("a.imgLink").jImageLink({		
+		iconClassName : "linkIcon",
+		iconRel : "shadowbox",
+		iconWidth : 14,
+		iconHeight : 14
+	});		
+	
+	/* use shadowbox */
+	Shadowbox.init({
+		resizeLgImages:     true,
+		displayNav:         false,
+		handleUnsupported:  'remove',
+		keysClose:          ['c', 27] // c or esc
+	});
+
+});				
+				</pre>
+				</div>
+				<div class="css">
+				<h4>CSS:</h4>
+				<pre>
+a.linkIcon {
+	display: block;
+	background: url(images/lightbox.gif) no-repeat;
+	width: 14px;
+	height: 14px;
+}
+
+img {border:none;}
+					
+				</pre>
+				</div>
+				</div>
+			</div>
+			<div id="downloads">
+				<h2>Downloads<a href="#header">Top</a></h2>
+				<div class="content">
+					<a href="jQuery.jImageLink.zip" class="source">Download Source Packge</a>
+					<a href="scripts/jquery.jImageLink.js" class="siglejs">Download jQuery.jImageLink.js</a>
+					<a href="scripts/jquery.jImageLink-pack.js" class="pack">Download jQuery.jImageLink-pack.js</a>
+				</div>
+			</div>
+			<div id="about">
+				<h2>About<a href="#header">Top</a></h2>
+				<div class="content">
+					 jQuery jImageLink Plugin<br />
+					 Copyright (C) 2008 <a href="http://www.wathon.com">Wathon Team</a>.<br />
+					 <br />
+					 使用本插件请遵守<a href="http://creativecommons.org/licenses/by/2.5/cn/">《知识共享署名 2.5 中国大陆许可协议》</a><br />
+					 <a href="http://creativecommons.org/licenses/by/2.5/cn/">http://creativecommons.org/licenses/by/2.5/cn/</a><br />
+					 <br />					 
+					 Author <a href="http://huacn.cnblogs.com">Json Lee</a><br />
+					 Copyright &copy; 2008 <a href="http://www.wathon.com">Wathon Team</a>.<br />
+					 License <a href="http://creativecommons.org/licenses/by/2.5/cn/">Attribution 2.5 China Mainland</a><br />
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
